@@ -1,12 +1,14 @@
+from .constants import (MonoEffect, CustomEffect)
+
 MONO_EFFECTS = {
-  'Solid (custom color)': 211,
-  'Breathing (custom color)': 206,
-  'Meteor (custom color)': 205,
-  'Flow (custom color)': 208,
-  'Wave (custom color)': 209,
-  'Flash (custom color)': 210,
-  'Stack (custom color)': 207,
-  'Catchup (custom color)': 212,
+  'Solid (custom color)': MonoEffect.SOLID,
+  'Breathing (custom color)': MonoEffect.BREATHING,
+  'Meteor (custom color)': MonoEffect.METEOR,
+  'Flow (custom color)': MonoEffect.FLOW,
+  'Wave (custom color)': MonoEffect.WAVE,
+  'Flash (custom color)': MonoEffect.FLASH,
+  'Stack (custom color)': MonoEffect.STACK,
+  'Catchup (custom color)': MonoEffect.CATCHUP,
 }
 
 PRESET_EFFECTS = {
@@ -193,16 +195,16 @@ PRESET_EFFECTS = {
 }
 
 CUSTOM_EFFECTS = {
-  'Custom Effect 1': 1,
-  'Custom Effect 2': 2,
-  'Custom Effect 3': 3,
-  'Custom Effect 4': 4,
-  'Custom Effect 5': 5,
-  'Custom Effect 6': 6,
-  'Custom Effect 7': 7,
-  'Custom Effect 8': 8,
-  'Custom Effect 9': 9,
-  'Custom Effect 10': 10,
-  'Custom Effect 11': 11,
-  'Custom Effect 12': 12,
+  'Custom Effect 1': CustomEffect.CUSTOM_1,
+  'Custom Effect 2': CustomEffect.CUSTOM_2,
+  'Custom Effect 3': CustomEffect.CUSTOM_3,
+  'Custom Effect 4': CustomEffect.CUSTOM_4,
+  'Custom Effect 5': CustomEffect.CUSTOM_5,
+  'Custom Effect 6': CustomEffect.CUSTOM_6,
+  'Custom Effect 7': CustomEffect.CUSTOM_7,
+  'Custom Effect 8': CustomEffect.CUSTOM_8,
+  'Custom Effect 9': CustomEffect.CUSTOM_9,
+  'Custom Effect 10': CustomEffect.CUSTOM_10,
+  'Custom Effect 11': CustomEffect.CUSTOM_11,
+  'Custom Effect 12': CustomEffect.CUSTOM_12,
 }
