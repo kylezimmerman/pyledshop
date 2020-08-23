@@ -47,17 +47,17 @@ Most of the features in the app are supported, but not everything.
 - [x] Set Color (rgb)
 - [x] Set Brightness
 - [x] Set Speed
-- [x] Select Preset
-- [x] Select Custom
+- [x] Select Preset Effect
+- [x] Select Custom Effect
 - [x] Sync State
 
 ### Not Yet Supported
-- [ ] Upload new custom patterns
+- [ ] Upload new custom patterns (You can still upload custom patterns via the mobile app and use them)
 - [ ] Change number of segments
 - [ ] Change length of segments
 
 ### Won't Be Supported
-- Connecting to Device.
+- Connecting to device to Wi-Fi (This project assumes you have used the Mobile App to do the initial connection)
 
   This is done via a complex (and often un-reliable) process involving the LED Shop App and the WiFi on your phone. It's not something that can be supported through software alone.
 
