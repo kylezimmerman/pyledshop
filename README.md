@@ -33,6 +33,14 @@ light.set_brightness(255) # Brightest
 light.set_speed(0) # Slowest
 light.set_speed(255) # Fastest
 
+# Segments - Manual (Like the official app)
+light.set_segments(3) # Sets the total number of segments
+light.set_lights_per_segment(100) # Sets the total number of lights per segment
+
+# Segments - Automatic (Calculate the lights per segment to fill a target number of lights)
+light.set_calculated_segments(300, 1) # Equivalent to 1 segment, 300 lights per segment = 300 lights
+light.set_calculated_segments(300, 4) # Equivalent to 4 segments, 75 lights per segment = 300 lights
+
 # Sync state
 light.sync_state() # Updates light.state with the latest state on the controller
 ```
@@ -50,11 +58,11 @@ Most of the features in the app are supported, but not everything.
 - [x] Select Preset Effect
 - [x] Select Custom Effect
 - [x] Sync State
+- [x] Change number of segments
+- [x] Change length of segments
 
 ### Not Yet Supported
 - [ ] Upload new custom patterns (You can still upload custom patterns via the mobile app and use them)
-- [ ] Change number of segments
-- [ ] Change length of segments
 
 ### Won't Be Supported
 - Connecting to device to Wi-Fi (This project assumes you have used the Mobile App to do the initial connection)

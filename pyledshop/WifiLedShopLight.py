@@ -122,6 +122,37 @@ class WifiLedShopLight:
     if self.state.is_on:
       self.toggle()
 
+  def set_segments(self, segments):
+    """
+    Sets the total number of segments. Total lights is segments * lights_per_segment.
+    
+    :param segments: The number of segments
+    """
+    self.send_command(Command.SET_SEGMENT_COUNT, [segments])
+
+  def set_lights_per_segment(self, lights_per_segment):
+    """
+    Sets the number of lights per segment. Total lights is segments * lights_per_segment.
+
+    :param lights_per_segment: The number of lights per segment
+    """
+    lights_per_segment_data = list(lights_per_segment.to_bytes(2, byteorder='little'))
+    self.send_command(Command.SET_LIGHTS_PER_SEGMENT, lights_per_segment_data)
+
+  def set_calculated_segments(self, total_lights, segments):
+    """
+    Helper function to automatically set the number of segments and lights per segment
+    to reach the target total lights (rounded down to never exceed total_lights)
+
+    Usually you know the total number of lights you have available on a light strip
+    and want to split it into segments that take up the whole strip
+
+    :param total_lights: The target total number of lights to use
+    :param segments: The number of segments to split the total into
+    """
+    self.set_segments(segments)
+    self.set_lights_per_segment(int(total_lights / segments))
+
   def send_command(self, command, data=[]):
     """
     Helper method to send a command to the controller.
@@ -185,8 +216,3 @@ class WifiLedShopLight:
     return f"""WikiLedShopLight @ {self.ip}:{self.port}
       state: {self.state}
     """
-
-  # This one needs work still... it seems to partially work but I think I'm misunderstanding how this works
-  # def set_size(self, lights_per_segment, segment_count):
-  #   self.send_command(Command.SET_SEGMENT_COUNT, [segment_count])
-  #   self.send_command(Command.SET_LIGHTS_PER_SEGMENT, [lights_per_segment])
